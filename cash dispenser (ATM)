@@ -1,0 +1,54 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+     helloWorldMethod();
+  }
+  public static void helloWorldMethod(){
+    System.out.println("Welcome to the bank system.");
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Please enter your 4 letter password.");
+    int input=sc.nextInt();
+    System.out.println("Please enter the value of money you want to withdraw.");
+    double money=sc.nextDouble();
+    if(money < 5000 && money >= 20){
+      System.out.println("The withdrawal process will be short.");
+    }
+    else if(money >= 5000 && money <=99999){
+      System.out.println("The withdrawal process will be long, please wait.");
+    }
+    else if(money>100000){
+      System.out.println("This ATM has only 100000TL.");
+    }
+    else{
+      System.out.println("This value is zero. Bank system can't do anything.");
+    }
+    System.out.println("What do you think about this ATM system?");
+    String thoughts = sc.next();
+    switch (thoughts) {
+      case "Verygood":
+        System.out.println("Thank you so much.");
+        break;
+      case "Good":
+        System.out.println("Thank you.");
+        break;
+      case "Notsure":
+        System.out.println("See you next time.");
+        break;
+      case "Bad":
+        System.out.println("We will try to fix shortcomings.");
+        break;
+        default:
+        System.out.println("The ATM system couldn't answer this case.");
+    }
+    
+    System.out.println("Enter your value, and see your value in different currencies($)");
+    double turklira = sc.nextDouble();
+    double dollar = turklira * 0.18;
+    sc.close();
+    System.out.println(dollar + "$");
+
+    for (int i= 0; i<=2; i++){
+    System.out.println("Goodbye"); 
+  }
+ }
+}
